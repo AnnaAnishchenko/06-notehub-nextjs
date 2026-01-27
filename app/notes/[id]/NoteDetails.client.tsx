@@ -1,9 +1,12 @@
+
 "use client"
 import {fetchNoteById} from "@/lib/api";
 import css from '../notes.module.css';
 
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
+
+
 
 
 
@@ -18,7 +21,9 @@ const {
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
     enabled: !!id,
+
   });
+
 
 
  if (isLoading) {
@@ -44,39 +49,3 @@ const {
   );
 }
 export default NoteDetailsClient;
-
-
-
-
-
-
-
-
-
-
-// "use client"
-// import {fetchNoteById} from "@/lib/api";
-// import css from "./Notes.module.css";
-
-
-// interface NoteDetailsProps {
-//    params: Promise<{ id: string }>;
-// }
-
-
-// async function NoteDetailsClient ({params}: NoteDetailsProps) {
-// const { id } = await params;
-// const note = await fetchNoteById(id);
-//     return(
-//        <div className={css.container}>
-// 	<div className={css.item}>
-// 	  <div className={css.header}>
-// 	    <h2>Note title</h2>
-// 	  </div>
-// 	  <p className={css.content}>Note content</p>
-// 	  <p className={css.date}>Created date</p>
-// 	</div>
-// </div>
-//     )
-// }
-// export default NoteDetailsClient;

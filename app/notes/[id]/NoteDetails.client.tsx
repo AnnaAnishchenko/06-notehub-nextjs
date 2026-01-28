@@ -21,6 +21,7 @@ const {
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
     enabled: !!id,
+ refetchOnMount: false,
 
   });
 

@@ -4,7 +4,7 @@ import NoteDetailsClient from "./NoteDetails.client";
 // import css from "..notes.module.css";
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 async function NoteDetails ({ params }: PageProps) {

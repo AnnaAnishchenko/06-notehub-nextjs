@@ -1,6 +1,6 @@
 "use client";
 
-import css from "./notes.module.css";
+import css from "./Notes.module.css";
 
 
 

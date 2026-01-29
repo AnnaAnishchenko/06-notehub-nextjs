@@ -8,10 +8,14 @@ interface PageProps {
 }
 
 async function NoteDetails ({ params }: PageProps) {
-	 const queryClient = new QueryClient();
+	 const { id } = await params;
+  
+  const queryClient = new QueryClient();
+
+
 await queryClient.prefetchQuery({
-	queryKey: ["note", params.id],
-	queryFn: () => fetchNoteById(params.id),
+	queryKey: ["note", id],
+	queryFn: () => fetchNoteById(id),
   });
 
 	  return (

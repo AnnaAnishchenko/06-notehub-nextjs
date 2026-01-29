@@ -1,6 +1,7 @@
 "use client";
 
 import css from "./notes.module.css";
+
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
 
